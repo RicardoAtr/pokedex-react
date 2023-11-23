@@ -1,32 +1,15 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
-function App() {
-  const [pokemonData, setPokemonData] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=20');
-        setPokemonData(response.data.results);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-
-    fetchData();
-  }, []);
-
+const App = () => {
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold mb-4">Pokédex</h1>
-      <ul>
-        {pokemonData.map((pokemon) => (
-          <li key={pokemon.name}>{pokemon.name}</li>
-        ))}
-      </ul>
+    <div>
+      <Header />
+      <Hero />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
