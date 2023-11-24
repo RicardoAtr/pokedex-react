@@ -1,6 +1,6 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+import Header from "./pages/Header";
+import Hero from "./pages/Hero";
+import Footer from "./pages/Footer";
 
 const App = () => {
   return (
