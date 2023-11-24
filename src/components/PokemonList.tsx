@@ -1,8 +1,8 @@
-import { IndexedPokemon } from "../interfaces/pokemon";
+import { IPokemonList } from "../interfaces/pokemon.interface";
 import { PokemonCard } from "./PokemonCard";
 
 interface PokemonListProps {
-  pokemons: IndexedPokemon[];
+  pokemons: IPokemonList[];
 }
 
 const PokemonList = ({ pokemons }: PokemonListProps) => {
@@ -14,7 +14,7 @@ const PokemonList = ({ pokemons }: PokemonListProps) => {
               return (
                 <>
                   <div className="max-w-full rounded overflow-hidden shadow-lg ">
-                    <div className="font-bold text-xl mb-2 flex items-center justify-center font-mono px-6 py-4">
+                    <div className="font-bold text-xl mb-2 flex flex-col items-center justify-center font-mono px-6 py-4 ">
                       <PokemonCard key={p.name} pokemon={p} />
                     </div>
                   </div>

@@ -11,7 +11,7 @@ export interface PokemonListResponse {
   results: IndexedPokemon[];
 }
 
-export interface PokemonList {
+export interface IPokemonList {
   name: string;
   url: string;
   image: string;

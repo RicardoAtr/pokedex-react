@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { POKEMON_API_POKEMON_URL } from "../constants.ts";
 import {
   IndexedPokemon,
-  PokemonList,
+  IPokemonList,
   PokemonListResponse,
-} from "../interfaces/pokemon.tsx";
+} from "../interfaces/pokemon.interface.tsx";
 import axiosClient from "../conf/axiosClient.tsx";
 import { POKEMON_IMAGE_BASE_URL } from "../constants.ts";
 
 const usePokemons = () => {
-  const [pokemons, setPokemons] = useState<IndexedPokemon[]>([]);
+  const [pokemons, setPokemons] = useState<IPokemonList[]>([]);
   const [nextUrl, setNextUrl] = useState<string | null>(
     POKEMON_API_POKEMON_URL
   );
@@ -24,7 +24,7 @@ const usePokemons = () => {
         .replace(`${POKEMON_API_POKEMON_URL}/`, "")
         .replace("/", "")
     );
-    const pokemonList: PokemonList = {
+    const pokemonList: IPokemonList = {
       name: IndexedPokemon.name,
       url: IndexedPokemon.url,
       image: `${POKEMON_IMAGE_BASE_URL}/${pokedexNumber}.png`,
