@@ -1,15 +1,7 @@
-import Home from "./pages/Home.tsx";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-]);
+import { Routing } from "./Routes/Router";
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return <Routing />;
 };
 
 export default App;

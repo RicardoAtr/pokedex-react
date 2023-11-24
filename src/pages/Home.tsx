@@ -1,6 +1,6 @@
-import Header from "./Header";
-import Hero from "./Hero";
-import Footer from "./Footer";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
 
 export const Home = () => {
   return (

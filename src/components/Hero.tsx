@@ -1,5 +1,5 @@
 import usePokemons from "../hooks/usePokemons";
-import PokemonList from "../components/PokemonList";
+import PokemonList from "./PokemonList";
 
 const Hero = () => {
   const { pokemons } = usePokemons();
