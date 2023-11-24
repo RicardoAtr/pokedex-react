@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="text-center bg-gray-800 text-white py-4">
-      <p>&copy; 2023 Tu Aplicación. Todos los derechos reservados.</p>
+    <footer className="fixed bottom-0 w-full text-center bg-red-500 text-white py-4">
+      <p>&copy; 2023 Pokedex By RicardoAtr</p>
     </footer>
   );
 };

@@ -1,15 +1,15 @@
-import Header from "./pages/Header";
-import Hero from "./pages/Hero";
-import Footer from "./pages/Footer";
+import Home from "./pages/Home.tsx";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+]);
 
 const App = () => {
-  return (
-    <div>
-      <Header />
-      <Hero />
-      <Footer />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
