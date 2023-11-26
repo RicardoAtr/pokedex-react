@@ -1,15 +1,13 @@
 import Header from "../components/Header";
-import { Hero } from "../components/Hero";
+import { Hero2 } from "../components/Hero";
 import Footer from "../components/Footer";
 
-export const Home = () => {
+export const Berries = () => {
   return (
     <>
       <Header />
-      <Hero />
+      <Hero2 />
       <Footer />
     </>
   );
 };
-
-export default Home;

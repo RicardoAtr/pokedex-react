@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="bg-red-500 text-white p-4">
@@ -7,19 +8,19 @@ const Header = () => {
         </div>
         <ul className="flex">
           <li className="mr-4">
-            <a href="#home" className="text-white">
+            <Link to="/" className="text-white">
               Pokemon
-            </a>
+            </Link>
           </li>
           <li className="mr-4">
-            <a href="#berrys" className="text-white">
-              Berry
-            </a>
+            <Link to="/berries" className="text-white">
+              Berries
+            </Link>
           </li>
           <li>
-            <a href="#medals" className="text-white">
+            <Link to="/medals" className="text-white">
               Medallas
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

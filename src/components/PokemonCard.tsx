@@ -7,14 +7,14 @@ interface PokemonCardProps {
 export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   return (
     <>
-      <div>
+      <div >
         <img
           className="p-8 rounded-t-lg"
           src={pokemon.image}
           alt={pokemon.name}
         />
       </div>
-      <div>{pokemon.name}</div>
+      <div className="font-bold text-xl mb-2 capitalize">{pokemon.name}</div>
     </>
   );
 };

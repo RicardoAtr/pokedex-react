@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import { POKEMON_API_POKEMON_URL } from "../constants.ts";
 import {
   IndexedPokemon,
   IPokemonList,
   PokemonListResponse,
 } from "../interfaces/pokemon.interface.tsx";
 import axiosClient from "../conf/axiosClient.tsx";
-import { POKEMON_IMAGE_BASE_URL } from "../constants.ts";
+import {
+  POKEMON_IMAGE_BASE_URL,
+  POKEMON_API_POKEMON_URL,
+} from "../constants.ts";
 
 const usePokemons = () => {
   const [pokemons, setPokemons] = useState<IPokemonList[]>([]);
