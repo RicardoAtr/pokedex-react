@@ -1,12 +1,12 @@
 import Header from "../components/Header";
-import { Hero } from "../components/Hero";
 import Footer from "../components/Footer";
+import { Pokemon } from "../components/Pokemon";
 
 export const Home = () => {
   return (
     <>
       <Header />
-      <Hero />
+      <Pokemon />
       <Footer />
     </>
   );

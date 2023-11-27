@@ -19,7 +19,7 @@ const Header = () => {
           </li>
           <li>
             <Link to="/medals" className="text-white">
-              Medallas
+              Medals
             </Link>
           </li>
         </ul>

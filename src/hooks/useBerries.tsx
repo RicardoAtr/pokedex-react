@@ -20,7 +20,6 @@ export const useBerries = () => {
     const berryId = parseInt(
       IndexedBerry.url.replace(`${BERRY_API_BASE_URL}/`, "").replace("/", "")
     );
-    console.log(IndexedBerry.name);
     const berryList: IBerryList = {
       name: IndexedBerry.name,
       url: IndexedBerry.url,

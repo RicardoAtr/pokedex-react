@@ -43,12 +43,15 @@ const usePokemons = () => {
           IndexedPokemonToPokemonList(pokemon)
         );
         setPokemons(pokemonList);
+        setNextUrl(results.data.next);
       }
     }
   };
 
   return {
     pokemons,
+    fetchNextPage: fetchPokemons,
+    hasMorePokemons: !!nextUrl,
   };
 };
 

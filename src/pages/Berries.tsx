@@ -1,13 +1,15 @@
 import Header from "../components/Header";
-import { Hero2 } from "../components/Hero";
 import Footer from "../components/Footer";
+import { Berry } from "../components/Berry";
 
 export const Berries = () => {
   return (
     <>
       <Header />
-      <Hero2 />
+      <Berry />
       <Footer />
     </>
   );
 };
+
+export default Berries;
