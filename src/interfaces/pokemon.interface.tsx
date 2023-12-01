@@ -16,4 +16,6 @@ export interface IPokemonList {
   url: string;
   image: string;
   pokedexNumber: string;
+  id: number;
 }
+

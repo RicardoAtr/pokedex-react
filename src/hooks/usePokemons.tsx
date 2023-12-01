@@ -12,6 +12,8 @@ import {
 
 const usePokemons = () => {
   const [pokemons, setPokemons] = useState<IPokemonList[]>([]);
+  const [selectedPokemon, setSelectedPokemon] = useState<IPokemonList>();
+  const [isSelectedPokemonOpen, setIsSelectedPokemonOpen] = useState(false);
   const [nextUrl, setNextUrl] = useState<string | null>(
     POKEMON_API_POKEMON_URL
   );
@@ -27,6 +29,7 @@ const usePokemons = () => {
         .replace("/", "")
     );
     const pokemonList: IPokemonList = {
+      id: pokedexNumber,
       name: IndexedPokemon.name,
       url: IndexedPokemon.url,
       image: `${POKEMON_IMAGE_BASE_URL}/${pokedexNumber}.png`,
@@ -48,10 +51,22 @@ const usePokemons = () => {
     }
   };
 
+  const handlePokemonClick = (id: number) => {
+    
+    const clickedPokemon = pokemons.find((pokemon) => pokemon.id === id);
+    if (clickedPokemon) {
+      setSelectedPokemon(clickedPokemon);
+      setIsSelectedPokemonOpen(true);
+    }
+  };
+
   return {
     pokemons,
     fetchNextPage: fetchPokemons,
     hasMorePokemons: !!nextUrl,
+    handlePokemonClick,
+    selectedPokemon,
+    isSelectedPokemonOpen,
   };
 };
 
