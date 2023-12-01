@@ -35,12 +35,15 @@ export const useBerries = () => {
         const berryList = results.data.results.map((berry) =>
           IndexedBerryList(berry)
         );
-        setBerries(berryList);
+        setBerries([...berries, ...berryList]);
+        setNextUrl(results.data.next);
       }
     }
   };
   return {
     berries,
+    fetchNextPage: fetchBerries,
+    hasMoreBerries: !!nextUrl,
   };
 };
 
