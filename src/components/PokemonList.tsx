@@ -30,6 +30,13 @@ const PokemonList = ({ pokemons }: PokemonListProps) => {
               id={p.pokedexNumber}
               onClick={() => handlePokemonClick(p.id)} // Call the handlePokemonClick function on click
             >
+              <div className="pl-4 pt-4">
+                <img
+                  className="w-6 h-6 rounded-full shadow-lg"
+                  src="src\assets\logoPokeball.png"
+                  alt=""
+                />
+              </div>
               <div className="font-bold text-xl mb-2 flex flex-col items-center justify-center font-mono px-6 py-4 capitalize">
                 <PokemonCard pokemon={p} />
               </div>
