@@ -42,7 +42,7 @@ const usePokemons = () => {
         const pokemonList = results.data.results.map((pokemon) =>
           IndexedPokemonToPokemonList(pokemon)
         );
-        setPokemons(pokemonList);
+        setPokemons([...pokemons, ...pokemonList]);
         setNextUrl(results.data.next);
       }
     }
