@@ -68,19 +68,29 @@ export const PokemonView = ({ pokemon }: PokemonViewProps) => {
                             alt={pokemon.name}
                           />
                           <div className="flex flex-col font-mono font-medium">
-                            <div className="mt-2">
+                            <div className="mt-2 ">
+                              <div className="mt-2 flex space-x-2 uppercase">
+                                <div className="text-sm text-gray-500">
+                                  Altura:&nbsp;{pokemonInfo.height}"
+                                </div>
+                                <div className="text-sm text-gray-500">
+                                  Peso:&nbsp;{pokemonInfo.weight}Kg
+                                </div>
+                              </div>
                               <div className="text-lg text-gray-500">
-                                Stats
                                 {pokemonInfo.stats.map((stat) => (
                                   <div
                                     key={stat.stat.name}
                                     className="mt-1 text-base"
                                   >
                                     {stat.stat.name}
-                                    <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+                                    <div className="w-full bg-gray-200 rounded-full dark:bg-white-700">
                                       <div
                                         className="bg-green-600 text-xs font-medium text-green-100 text-center p-0.5 leading-none rounded-full"
-                                        style={{ width: `${stat.base_stat}%` }}
+                                        style={{
+                                          width: `${stat.base_stat}%`,
+                                          maxWidth: "100%",
+                                        }}
                                       >
                                         {stat.base_stat}%
                                       </div>
@@ -91,21 +101,25 @@ export const PokemonView = ({ pokemon }: PokemonViewProps) => {
                             </div>
                           </div>
                           <div>
-                            <div className="mt-2">
-                              <div className="text-sm text-gray-500">
+                            <div className="mt-2 flex space-x-2 w-full font-bold  ">
+                              <div className="text-sm text-gray-500 w-full font-medium text-center bg-gray-200 rounded-lg p-2 ">
                                 Habilidades
                                 {pokemonInfo.abilities.map((ability) => (
-                                  <div key={ability.ability.name}>
+                                  <div
+                                    className="font-mono font-medium text-start bg-red-200 rounded-md p-1 m-1 "
+                                    key={ability.ability.name}
+                                  >
                                     {ability.ability.name}
                                   </div>
                                 ))}
                               </div>
-                            </div>
-                            <div className="mt-2">
-                              <div className="text-sm text-gray-500">
+                              <div className="text-sm text-gray-500 w-full font-medium text-center bg-gray-200 rounded-lg p-2">
                                 Tipo
                                 {pokemonInfo.types.map((type) => (
-                                  <div key={type.type.name}>
+                                  <div
+                                    className="font-mono font-medium text-start bg-red-200 rounded-md p-1 m-1"
+                                    key={type.type.name}
+                                  >
                                     {type.type.name}
                                   </div>
                                 ))}
