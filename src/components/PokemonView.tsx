@@ -73,17 +73,17 @@ export const PokemonView = ({ pokemon }: PokemonViewProps) => {
                                 alt={pokemon.name}
                               />
                             </div>
-                            <div className="flex flex-col font-mono font-medium">
+                            <div className="flex flex-col font-mono ">
                               <div className="mt-2 ">
-                                <div className="mt-2 flex space-x-2 uppercase font-bold">
-                                  <div className="text-sm text-gray-500 font-medium">
+                                <div className="mt-2 flex space-x-2 uppercase font-bold ">
+                                  <div className="text-sm text-gray-500 text-xl text-gray-800">
                                     Height:&nbsp;{pokemonInfo.height}"
                                   </div>
-                                  <div className="text-sm text-gray-500 font-medium">
+                                  <div className="text-sm text-gray-500 text-xl text-gray-800">
                                     Weight:&nbsp;{pokemonInfo.weight}Kg
                                   </div>
                                 </div>
-                                <div className="text-lg text-gray-500">
+                                <div className="text-lg text-gray-500 font-medium">
                                   {pokemonInfo.stats.map((stat) => (
                                     <div
                                       key={stat.stat.name}
@@ -113,18 +113,18 @@ export const PokemonView = ({ pokemon }: PokemonViewProps) => {
                                 Skills
                                 {pokemonInfo.abilities.map((ability) => (
                                   <div
-                                    className="font-mono font-bold text-start bg-gray-200 rounded-md p-1 m-1 "
+                                    className="font-mono font-bold text-start bg-gray-200 rounded-md p-1 m-1 pl-2 "
                                     key={ability.ability.name}
                                   >
                                     {ability.ability.name}
                                   </div>
                                 ))}
                               </div>
-                              <div className="text-sm text-gray-500 w-full font-medium text-center rounded-lg p-2">
+                              <div className="text-sm text-gray-500 w-full font-medium text-center rounded-lg p-2 ">
                                 Type
                                 {pokemonInfo.types.map((type) => (
                                   <div
-                                    className="font-mono font-bold text-start rounded-md p-1 m-1 text-white "
+                                    className="font-mono font-bold text-start rounded-md p-1 m-1 text-white pl-2 "
                                     key={type.type.name}
                                     style={{
                                       backgroundColor: handleTypeColor(
