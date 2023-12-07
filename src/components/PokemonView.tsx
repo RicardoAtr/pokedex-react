@@ -9,7 +9,7 @@ interface PokemonViewProps {
 }
 
 export const PokemonView = ({ pokemon }: PokemonViewProps) => {
-  const { fetchPokemonInfo, pokemonDetails } = usePokemons();
+  const { fetchPokemonInfo, pokemonDetails, handleTypeColor } = usePokemons();
   const [open, setOpen] = useState(true);
   const [pokemonInfo, setPokemonInfo] = useState<PokemonInfo>();
   const cancelButtonRef = useRef(null);
@@ -60,65 +60,77 @@ export const PokemonView = ({ pokemon }: PokemonViewProps) => {
                   <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                     <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                       <div className="text-center items-center justify-center flex ">
-                        <div className="mt-3  sm:ml-4 sm:mt-0 sm:text-left text-2xl capitalize font-bold ">
-                          {pokemon.name}
-                          <img
-                            className="p-8 rounded-t-lg"
-                            src={pokemon.image}
-                            alt={pokemon.name}
-                          />
-                          <div className="flex flex-col font-mono font-medium">
-                            <div className="mt-2 ">
-                              <div className="mt-2 flex space-x-2 uppercase">
-                                <div className="text-sm text-gray-500">
-                                  Altura:&nbsp;{pokemonInfo.height}"
+                        <div className="mt-3 sm:mt-0 sm:text-left text-2xl capitalize font-bold ">
+                          <div className="flex space-x-2 w-full justify-between ">
+                            <div>{pokemon.name}</div>
+                            <div>#{pokemon.id}</div>
+                          </div>
+                          <div>
+                            <div>
+                              <img
+                                className="p-8 rounded-t-lg"
+                                src={pokemon.image}
+                                alt={pokemon.name}
+                              />
+                            </div>
+                            <div className="flex flex-col font-mono font-medium">
+                              <div className="mt-2 ">
+                                <div className="mt-2 flex space-x-2 uppercase font-bold">
+                                  <div className="text-sm text-gray-500 font-medium">
+                                    Height:&nbsp;{pokemonInfo.height}"
+                                  </div>
+                                  <div className="text-sm text-gray-500 font-medium">
+                                    Weight:&nbsp;{pokemonInfo.weight}Kg
+                                  </div>
                                 </div>
-                                <div className="text-sm text-gray-500">
-                                  Peso:&nbsp;{pokemonInfo.weight}Kg
-                                </div>
-                              </div>
-                              <div className="text-lg text-gray-500">
-                                {pokemonInfo.stats.map((stat) => (
-                                  <div
-                                    key={stat.stat.name}
-                                    className="mt-1 text-base"
-                                  >
-                                    {stat.stat.name}
-                                    <div className="w-full bg-gray-200 rounded-full dark:bg-white-700">
-                                      <div
-                                        className="bg-green-600 text-xs font-medium text-green-100 text-center p-0.5 leading-none rounded-full"
-                                        style={{
-                                          width: `${stat.base_stat}%`,
-                                          maxWidth: "100%",
-                                        }}
-                                      >
-                                        {stat.base_stat}%
+                                <div className="text-lg text-gray-500">
+                                  {pokemonInfo.stats.map((stat) => (
+                                    <div
+                                      key={stat.stat.name}
+                                      className="mt-1 text-base"
+                                    >
+                                      {stat.stat.name}
+                                      <div className="w-full bg-gray-200 rounded-full dark:bg-white-700 font-bold">
+                                        <div
+                                          className="bg-green-600 text-xs font-bold text-green-100 text-center p-0.5 leading-none rounded-full"
+                                          style={{
+                                            width: `${stat.base_stat}%`,
+                                            maxWidth: "100%",
+                                          }}
+                                        >
+                                          {stat.base_stat}%
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
-                                ))}
+                                  ))}
+                                </div>
                               </div>
                             </div>
                           </div>
                           <div>
                             <div className="mt-2 flex space-x-2 w-full font-bold  ">
-                              <div className="text-sm text-gray-500 w-full font-medium text-center bg-gray-200 rounded-lg p-2 ">
-                                Habilidades
+                              <div className="text-sm text-gray-500 w-full font-medium text-center  rounded-lg p-2 ">
+                                Skills
                                 {pokemonInfo.abilities.map((ability) => (
                                   <div
-                                    className="font-mono font-medium text-start bg-red-200 rounded-md p-1 m-1 "
+                                    className="font-mono font-bold text-start bg-gray-200 rounded-md p-1 m-1 "
                                     key={ability.ability.name}
                                   >
                                     {ability.ability.name}
                                   </div>
                                 ))}
                               </div>
-                              <div className="text-sm text-gray-500 w-full font-medium text-center bg-gray-200 rounded-lg p-2">
-                                Tipo
+                              <div className="text-sm text-gray-500 w-full font-medium text-center rounded-lg p-2">
+                                Type
                                 {pokemonInfo.types.map((type) => (
                                   <div
-                                    className="font-mono font-medium text-start bg-red-200 rounded-md p-1 m-1"
+                                    className="font-mono font-bold text-start rounded-md p-1 m-1 text-white "
                                     key={type.type.name}
+                                    style={{
+                                      backgroundColor: handleTypeColor(
+                                        type.type.name
+                                      ),
+                                    }}
                                   >
                                     {type.type.name}
                                   </div>
@@ -135,7 +147,7 @@ export const PokemonView = ({ pokemon }: PokemonViewProps) => {
                         className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
                         onClick={() => setOpen(false)}
                       >
-                        Volver
+                        Back
                       </button>
                     </div>
                   </Dialog.Panel>

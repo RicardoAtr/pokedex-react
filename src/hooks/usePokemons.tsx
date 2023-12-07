@@ -4,12 +4,15 @@ import {
   IPokemonList,
   PokemonInfo,
   PokemonListResponse,
+  PokemonType,
 } from "../interfaces/pokemon.interface.tsx";
+import { Color, ColorList } from "../interfaces/color.interface.tsx";
 import axiosClient from "../conf/axiosClient.tsx";
 import {
   POKEMON_IMAGE_BASE_URL,
   POKEMON_API_POKEMON_URL,
 } from "../constants.ts";
+import { pokemonTypeColor } from "../utils/pokemonTypeColor.tsx";
 
 const usePokemons = () => {
   const [pokemons, setPokemons] = useState<IPokemonList[]>([]);
@@ -19,9 +22,12 @@ const usePokemons = () => {
   const [nextUrl, setNextUrl] = useState<string | null>(
     POKEMON_API_POKEMON_URL
   );
+  const [pokemonTypeColors, setPokemonTypeColors] = useState<Color[]>();
+  const [pokemonColorList, setPokemonColorList] = useState<ColorList[]>();
 
   useEffect(() => {
     fetchPokemons();
+    setPokemonColorList(pokemonTypeColor);
   }, []);
 
   const IndexedPokemonToPokemonList = (IndexedPokemon: IndexedPokemon) => {
@@ -72,6 +78,13 @@ const usePokemons = () => {
     }
   };
 
+  const handleTypeColor = (type: String) => {
+    const typeColor = pokemonColorList?.find(
+      (color) => color.name === type
+    )?.color;
+    return typeColor;
+  };
+
   return {
     pokemons,
     fetchNextPage: fetchPokemons,
@@ -81,6 +94,7 @@ const usePokemons = () => {
     isSelectedPokemonOpen,
     pokemonDetails,
     fetchPokemonInfo,
+    handleTypeColor,
   };
 };
 

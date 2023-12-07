@@ -17,11 +17,6 @@ const Header = () => {
               Berries
             </Link>
           </li>
-          <li>
-            <Link to="/medals" className="text-white">
-              Medals
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>
