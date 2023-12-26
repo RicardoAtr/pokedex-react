@@ -4,9 +4,8 @@ import {
   IPokemonList,
   PokemonInfo,
   PokemonListResponse,
-  PokemonType,
 } from "../interfaces/pokemon.interface.tsx";
-import { Color, ColorList } from "../interfaces/color.interface.tsx";
+import { ColorList } from "../interfaces/color.interface.tsx";
 import axiosClient from "../conf/axiosClient.tsx";
 import {
   POKEMON_IMAGE_BASE_URL,
@@ -22,7 +21,7 @@ const usePokemons = () => {
   const [nextUrl, setNextUrl] = useState<string | null>(
     POKEMON_API_POKEMON_URL
   );
-  const [pokemonTypeColors, setPokemonTypeColors] = useState<Color[]>();
+
   const [pokemonColorList, setPokemonColorList] = useState<ColorList[]>();
 
   useEffect(() => {

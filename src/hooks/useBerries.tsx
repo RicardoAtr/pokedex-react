@@ -1,5 +1,5 @@
 import axiosClient from "../conf/axiosClient";
-import { POKEMON_API_POKEMON_URL } from "../constants";
+
 import { useState, useEffect } from "react";
 import {
   IndexedBerry,
