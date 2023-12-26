@@ -34,7 +34,7 @@ const PokemonList = ({ pokemons }: PokemonListProps) => {
                 <div className="pl-4 pt-4">
                   <img
                     className="w-6 h-6 rounded-full shadow-lg"
-                    src="src\assets\logoPokeball.png"
+                    src="src\assets\logoPokeball.svg"
                     alt=""
                   />
                 </div>
