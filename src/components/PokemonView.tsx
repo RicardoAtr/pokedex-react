@@ -108,8 +108,8 @@ export const PokemonView = ({ pokemon }: PokemonViewProps) => {
                             </div>
                           </div>
                           <div>
-                            <div className="mt-2 flex space-x-2 w-full font-bold  ">
-                              <div className="text-sm text-gray-500 w-full font-medium text-center  rounded-lg p-2 ">
+                            <div className="mt-2 flex w-full font-bold  ">
+                              <div className="text-sm text-gray-500 w-full font-medium text-center rounded-lg pt-2 ">
                                 Skills
                                 {pokemonInfo.abilities.map((ability) => (
                                   <div
@@ -120,7 +120,7 @@ export const PokemonView = ({ pokemon }: PokemonViewProps) => {
                                   </div>
                                 ))}
                               </div>
-                              <div className="text-sm text-gray-500 w-full font-medium text-center rounded-lg p-2 ">
+                              <div className="text-sm text-gray-500 w-full font-medium text-center rounded-lg pt-2 ">
                                 Type
                                 {pokemonInfo.types.map((type) => (
                                   <div
