@@ -2,6 +2,7 @@ import { IPokemonList } from "../interfaces/pokemon.interface";
 import { PokemonCard } from "./PokemonCard";
 import { useState } from "react";
 import PokemonView from "./PokemonView";
+import logoPokeball from "../assets/logoPokeball.svg";
 interface PokemonListProps {
   pokemons: IPokemonList[];
 }
@@ -34,7 +35,7 @@ const PokemonList = ({ pokemons }: PokemonListProps) => {
                 <div className="pl-4 pt-4">
                   <img
                     className="w-6 h-6 rounded-full shadow-lg"
-                    src="src\assets\logoPokeball.svg"
+                    src={logoPokeball}
                     alt=""
                   />
                 </div>
